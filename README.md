@@ -1,6 +1,6 @@
 # httpcompressionserver
-Extends the standard library module http.server with support of HTTP
-compression (gzip).
+Extends the standard library module __http.server__ with support of HTTP
+compression.
 
 When a request sent by the client includes an Accept-Encoding header, the
 server handles the value (eg "gzip", "x-gzip" or "deflate") and tries to
