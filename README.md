@@ -19,13 +19,13 @@ the compressed data size is small.
 
 # Usage
 
-httpcompressionserver.py [-h] [--bind ADDRESS] [port]
-
-positional arguments:
-  port                  Specify alternate port [default: 8000]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --bind ADDRESS, -b ADDRESS
-                        Specify alternate bind address [default: all
-                        interfaces]
+    httpcompressionserver.py [-h] [--bind ADDRESS] [port]
+    
+    positional arguments:
+      port                  Specify alternate port [default: 8000]
+    
+    optional arguments:
+      -h, --help            show this help message and exit
+      --bind ADDRESS, -b ADDRESS
+                            Specify alternate bind address [default: all
+                            interfaces]
