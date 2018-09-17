@@ -24,6 +24,8 @@ the compressed data size is small.
 
 # Usage
 
+From the command line:
+
     python -m httpcompressionserver [-h] [--bind ADDRESS] [port]
 
     positional arguments:
@@ -34,3 +36,11 @@ the compressed data size is small.
       --bind ADDRESS, -b ADDRESS
                             Specify alternate bind address [default: all
                             interfaces]
+
+In a script:
+
+```python
+import httpcompressionserver
+
+httpcompressionserver.run(port, bind)
+```
