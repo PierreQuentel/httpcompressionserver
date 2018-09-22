@@ -14,7 +14,7 @@ Class HTTPCompressionRequestHandler extends SimpleHTTPRequestHandler with
 Chunked Transfer Encoding is used to send the compressed response.
 """
 
-__version__ = "0.1"
+__version__ = "0.3"
 
 __all__ = [
     "ThreadingHTTPServer", "HTTPCompressionRequestHandler"
