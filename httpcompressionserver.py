@@ -297,9 +297,8 @@ class HTTPCompressionRequestHandler(SimpleHTTPRequestHandler):
             raise
 
 
-def run(port=8000, bind=''):
-    test(HandlerClass=HTTPCompressionRequestHandler, port=port,
-        bind=bind)
+def run(handler=HTTPCompressionRequestHandler, port=8000, bind=''):
+    test(HandlerClass=handler, port=port, bind=bind)
 
 
 if __name__ == '__main__':

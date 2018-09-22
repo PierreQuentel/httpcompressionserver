@@ -3,9 +3,10 @@
 Extends the standard library module __http.server__ with support of HTTP
 compression.
 
-When a request sent by the client includes an Accept-Encoding header, the
-server handles the value (eg "gzip", "x-gzip" or "deflate") and tries to
-compress the response body with the requested algorithm.
+When a request sent by the client includes an Accept-Encoding header, which is
+the case for all modern browsers, the server handles the value (eg "gzip" or
+"deflate") and tries to compress the response body with the requested
+algorithm.
 
 Class `HTTPCompressionRequestHandler` extends `SimpleHTTPRequestHandler` with
 2 additional attributes:
@@ -43,4 +44,36 @@ In a script:
 import httpcompressionserver
 
 httpcompressionserver.run(port, bind)
+```
+
+# Customising
+
+A subclass of `HTTPCompressionServer` can override `compressed_types` to
+another list of mimetypes to compress, and `compressions` to support other
+compression algorithms.
+
+For instance, to add support for the non-standard bzip2 encoding:
+
+```python
+import bz2
+from httpcompressionserver import HTTPCompressionRequestHandler, run
+
+# Generator for bzip2 compression encoding.
+def _bzip2_producer(fileobj):
+    bufsize = 2 << 17
+    producer = bz2.BZ2Compressor()
+    with fileobj:
+        while True:
+            buf = fileobj.read(bufsize)
+            if not buf: # end of file
+                yield producer.flush()
+                return
+            yield producer.compress(buf)
+
+
+class BZ2Server(HTTPCompressionRequestHandler):
+    pass
+
+BZ2Server.compressions.update(bzip2=_bzip2_producer)
+run()
 ```
