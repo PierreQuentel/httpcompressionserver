@@ -43,8 +43,12 @@ In a script:
 ```python
 import httpcompressionserver
 
-httpcompressionserver.run(port, bind)
+httpcompressionserver.run()
 ```
+
+Function `run()` can take optional arguments:
+
+    run(handler=HTTPCompressionRequestHandler, port=8000, bind='')
 
 # Customising
 
@@ -71,9 +75,9 @@ def _bzip2_producer(fileobj):
             yield producer.compress(buf)
 
 
-class BZ2Server(HTTPCompressionRequestHandler):
+class BZ2Handler(HTTPCompressionRequestHandler):
     pass
 
-BZ2Server.compressions.update(bzip2=_bzip2_producer)
-run()
+BZ2Handler.compressions.update(bzip2=_bzip2_producer)
+run(handler=BZ2Handler)
 ```
