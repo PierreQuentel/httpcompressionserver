@@ -98,7 +98,7 @@ def _zlib_producer(fileobj, wbits):
 
 def _gzip_producer(fileobj):
     """Generator for gzip compression."""
-    return _zlib_producer(fileobj, 25)
+    return _zlib_producer(fileobj, 31)
 
 def _deflate_producer(fileobj):
     """Generator for deflate compression."""
