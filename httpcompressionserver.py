@@ -314,4 +314,4 @@ if __name__ == '__main__':
                         help='Specify alternate port [default: 8000]')
     args = parser.parse_args()
 
-    run(args.port, args.bind)
+    run(port=args.port, bind=args.bind)
