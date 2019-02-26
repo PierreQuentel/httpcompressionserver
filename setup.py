@@ -6,7 +6,7 @@ with open('README.rst', encoding='utf-8') as fobj:
 setup(
     name='httpcompressionserver',
 
-    version='0.3.1',
+    version='0.4',
     description='Add support of HTTP compression to standard library module http.server',
     long_description=LONG_DESCRIPTION,
 
