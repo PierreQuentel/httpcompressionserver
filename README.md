@@ -60,7 +60,7 @@ For instance, to add support for the non-standard bzip2 encoding:
 
 ```python
 import bz2
-from httpcompressionserver import HTTPCompressionRequestHandler, run
+from httpcompressionserver import HTTPCompressionRequestHandler, test
 
 # Generator for bzip2 compression encoding.
 def _bzip2_producer(fileobj):
@@ -76,8 +76,9 @@ def _bzip2_producer(fileobj):
 
 
 class BZ2Handler(HTTPCompressionRequestHandler):
-    pass
 
-BZ2Handler.compressions.update(bzip2=_bzip2_producer)
-run(handler=BZ2Handler)
+    compressions = HTTPCompressionRequestHandler.compressions.copy()
+    compressions.update(bzip2=_bzip2_producer)
+
+test(HandlerClass=BZ2Handler)
 ```
