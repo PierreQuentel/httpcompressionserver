@@ -43,12 +43,13 @@ In a script:
 ```python
 import httpcompressionserver
 
-httpcompressionserver.run()
+httpcompressionserver.test()
 ```
 
-Function `run()` can take optional arguments:
+Function `test()` is defined in __`http.server`__ and takes optional 
+arguments:
 
-    run(handler=HTTPCompressionRequestHandler, port=8000, bind='')
+    test(port=8000, bind='')
 
 # Customising
 
