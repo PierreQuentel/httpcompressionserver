@@ -1,186 +1,912 @@
 <!doctype html>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-
-<title>Brython</title>
+<meta http-equiv="content-type" content="text/plain;charset=utf-8">
+<title>Du côté de chez Swann</title>
+<style>
+*{
+    font-family: sans-serif;
+}
+</style>
 </head>
 
 <body>
-
-<table id="banner" cellpadding=0 cellspacing=0>
-<tr id="banner_row">
-</tr>
-</table>
-
-<div id="content"></div>
-
-<div id="content_en" style="height:1px;visibility:hidden">
-
-<table style="width:85%;margin-left:10%">
-<tr>
-<td>
-<H1 style="font-size:300%;">Brython</H1>
-<H2>A Python 3 implementation for client-side web programming</H2>
-</td>
-<td valign="top">
-<select class="language" id="change_lang_en">
-<option value="en" selected>English
-<option value="es">Espa&ntilde;ol
-<option value="fr">Fran&ccedil;ais
-</select>
-</td>
-</tr>
-</table>
-
-<table style="width:85%;margin-left:10%">
-<tr>
-<td style="width:65%;font-size:16px;">
-Without a doubt, you've seen a clock like this in demos of HTML5
-<p>
-However, right click and view the source of this page...
-<p>It is not Javascript code! Instead, you will find Python code in a script of type "text/python".
-<p>Brython is designed to replace Javascript as the scripting language for the Web. As such, it is a Python 3 implementation (you can take it for a test drive through a web <a href="console.html" id="c_en">console</a>), adapted to the HTML5 environment, that is to say with an interface to the DOM objects and events.
-<p>The <a href="gallery/gallery_en.html">gallery</a> highlights a few of the possibilities, from creating simple document elements to drag and drop and 3D navigation. A <a href="https://github.com/brython-dev/brython/wiki/Brython%20in%20the%20wild">wiki</a> lists some applications using Brython.
-<p><a href="http://pyschool.net">pyschool.net</a> provides a web-based environment for teachers in Python classes.
-<p>You can also take a look at <a href="https://github.com/brython-dev/brython/wiki/Brython-videos-and-talks">presentations</a> made in various conferences.</td>
-
-<td style="padding-left:5%;">
-<canvas width="250" height="250" id="clock">
-<i>sorry, Brython can't make the demo work on your browser ; <br>check if Javascript is turned on
-<br><div id="navig_zone"></div></i>
-</canvas>
-</td>
-
-</tr>
-
-</table>
-
-</div>
-
-<div id="content_fr" style="height:1px;visibility:hidden">
-<table style="width:80%;margin-left:10%">
-<tr>
-<td>
-<H1 style="font-size:300%;">Brython</H1>
-<H2>Une impl�mentation de Python 3 pour la programmation web c�t� client</H2>
-</td>
-<td valign="top">
-<select class="language" id="change_lang_fr">
-<option value="en">English
-<option value="es">Espa&ntilde;ol
-<option value="fr" selected>Fran&ccedil;ais
-</select>
-</td>
-</tr>
-</table>
-
-<table style="width:80%;margin-left:10%">
-<tr>
-<td style="width:60%;font-size:16px;">
-Des horloges comme celle-ci, vous en avez sans doute d�j� vu dans des d�mos d'HTML5
-<p>
-Maintenant, regardez le code source de cette page...
-<p>Vous ne verrez pas une ligne de Javascript, mais � la place, du code Python dans un script de type "text/python".
-<p>Brython a pour objectif de remplacer Javascript comme langage de script des pages Web. Il s'agit donc d'une impl�mentation de Python 3 (que vous pouvez tester sur la <a href="console.html" id="c_fr">console</a>), adapt�e � l'environnement HTML5, c'est-�-dire dot�e d'une interface avec les objets et les �v�nements DOM.
-<p>Une <a href="gallery/gallery_fr.html">galerie</a> pr�sente quelques d�mos de ce qu'il est possible de faire, depuis la cr�ation d'�l�ments simples jusqu'au glisser-d�poser ou la navigation 3D. Un <a href="https://github.com/brython-dev/brython/wiki/Brython%20in%20the%20wild">wiki</a> r�pertorie quelques applications utilisant Brython.
-<p><a href="http://pyschool.net">pyschool.net</a> fournit un environnement web pour l'enseignement de Python.
-<p>Vous pouvez �galement consulter <a href="https://github.com/brython-dev/brython/wiki/Brython-videos-and-talks">plusieurs pr�sentations de Brython</a> dans diverses conf�rences.
-</td>
-
-<td style="padding-left:5%;">
-<canvas width="250" height="250" id="clock">
-<i>d�sol�, Brython n'arrive pas � faire fonctionner la d�mo sur votre navigateur ;<br>v�rifiez que Javascript est activ�
-<br><div id="navig_zone"></div></i>
-</canvas>
-</td>
-</tr>
-</table>
-
-</div>
-
-<div id="content_es" style="height:1px;visibility:hidden">
-<table style="width:80%;margin-left:10%;">
-<tr>
-<td>
-<H1 style="font-size:300%;">Brython</H1>
-<H2>Una implementaci�n de Python para la programaci�n web del lado del cliente</H2>
-</td>
-<td valign="top">
-<select class="language" id="change_lang_en">
-<option value="en">English
-<option value="es" selected>Espa&ntilde;ol
-<option value="fr">Fran&ccedil;ais
-</select>
-</td>
-</tr>
-</table>
-
-<table style="width:80%;margin-left:10%">
-<tr>
-<td style="width:60%;font-size:16px;">
-Muy cierto que has visto relojes de este tipo en demos de HTML5.
-<p>
-Pero, mira el c�digo fuente de esta p�gina...
-<p>No hay lineas de Javascript, es puro c�digo Python dentro de un script de tipo "text/python".
-<p>Brython es dise�ado para remplazar a JavaScript como lenguaje de scripting para p�ginas web. Por lo tanto, es una implementaci�n de Python 3 (que se puede probar en la <a href="console.html" id="c_es">consola</a>), adaptada a un entorno HTML5, es decir, con una interfaz con los objetos y eventos DOM.
-<p>Una <a href="gallery/gallery_es.html">galer�a</a> presenta algunas maquetas de lo que se puede hacer, de la creaci�n de elementos, a ejemplos de arrastrar y soltar a navegaci�n 3D.
-<p>Una <a href="https://github.com/brython-dev/brython/wiki/Brython%20in%20the%20wild">wiki</a> que muestra un listado de algunas aplicaciones que funcionan usando Brython.
-<p>Adem�s, le puedes echar un vistazo a<a href="https://github.com/brython-dev/brython/wiki/Brython-videos-and-talks"> estas presentaciones</a> mostradas en varias conferencias.</td>
-</td>
-<td style="padding-left:5%;">
-<canvas width="250" height="250" id="clock">
-<i>El navegador no soporta HTML5 canvas<br>o el Javascript es apagado
-<br><div id="navig_zone"></div></i>
-</canvas>
-</td>
-</table>
-
-</div>
-
-<div id="content_pt" style="height:1px;visibility:hidden">
-
-<table style="width:80%;margin-left:10%">
-<tr>
-<td>
-<H1 style="font-size:300%;">Brython</H1>
-<H2>Uma implementa��o de Python 3 para a programa��o web do lado do cliente</H2>
-</td>
-<td valign="top">
-<select class="language" id="change_lang_pt">
-<option value="en">English
-<option value="es">Espa&ntilde;ol
-<option value="fr">Fran&ccedil;ais
-<option value="pt" selected>Portugu&ecirc;s
-</select>
-</td>
-</tr>
-</table>
-
-<table style="width:80%;margin-left:10%">
-<tr>
-<td style="width:60%;font-size:16px;">
-Sem d�vida voc� j� viu um rel�gio como este em demonstra��es de HTML5
-<p>
-Entretanto, clique com o bot�o direito e veja o c�digo fonte desta p�gna...
-<p>N�o � c�digo em Javascript! Em vez disso, voc� encontrar� c�digo em Python em um script do tipo "text/python"
-<p>Brython foi desenhado para substituir o Javascript como a linguagem de script da Web. Como tal, � uma implementa��o de Python 3 (voc� pode testar no <a href="console.html" id="c_pt">console</a>), adaptada ao ambiente HTML5, quer dizer, com uma interface para objetos e eventos DOM
-<p>A <a href="/gallery/gallery_pt.html">galeria</a> apresenta algumas possibilidades, da cria�ao de simples elementos de documentos at� a a��o de arrastar e soltar e navega��o em 3D
-</td>
-
-<td style="padding-left:5%;">
-<canvas width="250" height="250" id="clock">
-<i>Desculpe, Brython n�o consegue fazer a demonstra��o funcionar em seu navegador, <br>verifique se o Javascript est� ligado
-<br><div id="navig_zone"></div></i>
-</canvas>
-</td>
-
-</tr>
-
-</table>
-
-</div>
+<pre>
+PREMIÈRE PARTIE
 
 
+
+COMBRAY
+
+
+
+I.
+
+
+
+Longtemps, je me suis couché de bonne heure. Parfois, à peine ma
+bougie éteinte, mes yeux se fermaient si vite que je n'avais pas le
+temps de me dire: «Je m'endors.» Et, une demi-heure après, la pensée
+qu'il était temps de chercher le sommeil m'éveillait; je voulais poser
+le volume que je croyais avoir encore dans les mains et souffler ma
+lumière; je n'avais pas cessé en dormant de faire des réflexions sur
+ce que je venais de lire, mais ces réflexions avaient pris un tour un
+peu particulier; il me semblait que j'étais moi-même ce dont parlait
+l'ouvrage: une église, un quatuor, la rivalité de François Ier et de
+Charles Quint. Cette croyance survivait pendant quelques secondes à
+mon réveil; elle ne choquait pas ma raison mais pesait comme des
+écailles sur mes yeux et les empêchait de se rendre compte que le
+bougeoir n'était plus allumé. Puis elle commençait à me devenir
+inintelligible, comme après la métempsycose les pensées d'une
+existence antérieure; le sujet du livre se détachait de moi, j'étais
+libre de m'y appliquer ou non; aussitôt je recouvrais la vue et
+j'étais bien étonné de trouver autour de moi une obscurité, douce et
+reposante pour mes yeux, mais peut-être plus encore pour mon esprit, à
+qui elle apparaissait comme une chose sans cause, incompréhensible,
+comme une chose vraiment obscure. Je me demandais quelle heure il
+pouvait être; j'entendais le sifflement des trains qui, plus ou moins
+éloigné, comme le chant d'un oiseau dans une forêt, relevant les
+distances, me décrivait l'étendue de la campagne déserte où le
+voyageur se hâte vers la station prochaine; et le petit chemin qu'il
+suit va être gravé dans son souvenir par l'excitation qu'il doit à des
+lieux nouveaux, à des actes inaccoutumés, à la causerie récente et aux
+adieux sous la lampe étrangère qui le suivent encore dans le silence
+de la nuit, à la douceur prochaine du retour.
+
+J'appuyais tendrement mes joues contre les belles joues de l'oreiller
+qui, pleines et fraîches, sont comme les joues de notre enfance. Je
+frottais une allumette pour regarder ma montre. Bientôt minuit. C'est
+l'instant où le malade, qui a été obligé de partir en voyage et a dû
+coucher dans un hôtel inconnu, réveillé par une crise, se réjouit en
+apercevant sous la porte une raie de jour. Quel bonheur, c'est déjà le
+matin! Dans un moment les domestiques seront levés, il pourra sonner,
+on viendra lui porter secours. L'espérance d'être soulagé lui donne du
+courage pour souffrir. Justement il a cru entendre des pas; les pas se
+rapprochent, puis s'éloignent. Et la raie de jour qui était sous sa
+porte a disparu. C'est minuit; on vient d'éteindre le gaz; le dernier
+domestique est parti et il faudra rester toute la nuit à souffrir sans
+remède.
+
+Je me rendormais, et parfois je n'avais plus que de courts réveils
+d'un instant, le temps d'entendre les craquements organiques des
+boiseries, d'ouvrir les yeux pour fixer le kaléidoscope de
+l'obscurité, de goûter grâce à une lueur momentanée de conscience le
+sommeil où étaient plongés les meubles, la chambre, le tout dont je
+n'étais qu'une petite partie et à l'insensibilité duquel je retournais
+vite m'unir. Ou bien en dormant j'avais rejoint sans effort un âge à
+jamais révolu de ma vie primitive, retrouvé telle de mes terreurs
+enfantines comme celle que mon grand-oncle me tirât par mes boucles et
+qu'avait dissipée le jour,--date pour moi d'une ère nouvelle,--où on les
+avait coupées. J'avais oublié cet événement pendant mon sommeil, j'en
+retrouvais le souvenir aussitôt que j'avais réussi à m'éveiller pour
+échapper aux mains de mon grand-oncle, mais par mesure de précaution
+j'entourais complètement ma tête de mon oreiller avant de retourner
+dans le monde des rêves.
+
+Quelquefois, comme Ève naquit d'une côte d'Adam, une femme naissait
+pendant mon sommeil d'une fausse position de ma cuisse. Formée du
+plaisir que j'étais sur le point de goûter, je m'imaginais que c'était
+elle qui me l'offrait. Mon corps qui sentait dans le sien ma propre
+chaleur voulait s'y rejoindre, je m'éveillais. Le reste des humains
+m'apparaissait comme bien lointain auprès de cette femme que j'avais
+quittée il y avait quelques moments à peine; ma joue était chaude
+encore de son baiser, mon corps courbaturé par le poids de sa taille.
+Si, comme il arrivait quelquefois, elle avait les traits d'une femme
+que j'avais connue dans la vie, j'allais me donner tout entier à ce
+but: la retrouver, comme ceux qui partent en voyage pour voir de leurs
+yeux une cité désirée et s'imaginent qu'on peut goûter dans une
+réalité le charme du songe. Peu à peu son souvenir s'évanouissait,
+j'avais oublié la fille de mon rêve.
+
+Un homme qui dort, tient en cercle autour de lui le fil des heures,
+l'ordre des années et des mondes. Il les consulte d'instinct en
+s'éveillant et y lit en une seconde le point de la terre qu'il occupe,
+le temps qui s'est écoulé jusqu'à son réveil; mais leurs rangs peuvent
+se mêler, se rompre. Que vers le matin après quelque insomnie, le
+sommeil le prenne en train de lire, dans une posture trop différente
+de celle où il dort habituellement, il suffit de son bras soulevé pour
+arrêter et faire reculer le soleil, et à la première minute de son
+réveil, il ne saura plus l'heure, il estimera qu'il vient à peine de
+se coucher. Que s'il s'assoupit dans une position encore plus déplacée
+et divergente, par exemple après dîner assis dans un fauteuil, alors
+le bouleversement sera complet dans les mondes désorbités, le fauteuil
+magique le fera voyager à toute vitesse dans le temps et dans
+l'espace, et au moment d'ouvrir les paupières, il se croira couché
+quelques mois plus tôt dans une autre contrée. Mais il suffisait que,
+dans mon lit même, mon sommeil fût profond et détendît entièrement mon
+esprit; alors celui-ci lâchait le plan du lieu où je m'étais endormi,
+et quand je m'éveillais au milieu de la nuit, comme j'ignorais où je
+me trouvais, je ne savais même pas au premier instant qui j'étais;
+j'avais seulement dans sa simplicité première, le sentiment de
+l'existence comme il peut frémir au fond d'un animal: j'étais plus
+dénué que l'homme des cavernes; mais alors le souvenir--non encore du
+lieu où j'étais, mais de quelques-uns de ceux que j'avais habités et
+où j'aurais pu être--venait à moi comme un secours d'en haut pour me
+tirer du néant d'où je n'aurais pu sortir tout seul; je passais en une
+seconde par-dessus des siècles de civilisation, et l'image confusément
+entrevue de lampes à pétrole, puis de chemises à col rabattu,
+recomposaient peu à peu les traits originaux de mon moi.
+
+Peut-être l'immobilité des choses autour de nous leur est-elle imposée
+par notre certitude que ce sont elles et non pas d'autres, par
+l'immobilité de notre pensée en face d'elles. Toujours est-il que,
+quand je me réveillais ainsi, mon esprit s'agitant pour chercher, sans
+y réussir, à savoir où j'étais, tout tournait autour de moi dans
+l'obscurité, les choses, les pays, les années. Mon corps, trop
+engourdi pour remuer, cherchait, d'après la forme de sa fatigue, à
+repérer la position de ses membres pour en induire la direction du
+mur, la place des meubles, pour reconstruire et pour nommer la demeure
+où il se trouvait. Sa mémoire, la mémoire de ses côtes, de ses genoux,
+de ses épaules, lui présentait successivement plusieurs des chambres
+où il avait dormi, tandis qu'autour de lui les murs invisibles,
+changeant de place selon la forme de la pièce imaginée,
+tourbillonnaient dans les ténèbres. Et avant même que ma pensée, qui
+hésitait au seuil des temps et des formes, eût identifié le logis en
+rapprochant les circonstances, lui,--mon corps,--se rappelait pour
+chacun le genre du lit, la place des portes, la prise de jour des
+fenêtres, l'existence d'un couloir, avec la pensée que j'avais en m'y
+endormant et que je retrouvais au réveil. Mon côté ankylosé, cherchant
+à deviner son orientation, s'imaginait, par exemple, allongé face au
+mur dans un grand lit à baldaquin et aussitôt je me disais: «Tiens,
+j'ai fini par m'endormir quoique maman ne soit pas venue me dire
+bonsoir», j'étais à la campagne chez mon grand-père, mort depuis bien
+des années; et mon corps, le côté sur lequel je reposais, gardiens
+fidèles d'un passé que mon esprit n'aurait jamais dû oublier, me
+rappelaient la flamme de la veilleuse de verre de Bohême, en forme
+d'urne, suspendue au plafond par des chaînettes, la cheminée en marbre
+de Sienne, dans ma chambre à coucher de Combray, chez mes
+grands-parents, en des jours lointains qu'en ce moment je me figurais
+actuels sans me les représenter exactement et que je reverrais mieux
+tout à l'heure quand je serais tout à fait éveillé.
+
+Puis renaissait le souvenir d'une nouvelle attitude; le mur filait
+dans une autre direction: j'étais dans ma chambre chez Mme de
+Saint-Loup, à la campagne; mon Dieu! Il est au moins dix heures, on
+doit avoir fini de dîner! J'aurai trop prolongé la sieste que je fais
+tous les soirs en rentrant de ma promenade avec Mme de Saint-Loup,
+avant d'endosser mon habit. Car bien des années ont passé depuis
+Combray, où, dans nos retours les plus tardifs, c'était les reflets
+rouges du couchant que je voyais sur le vitrage de ma fenêtre. C'est
+un autre genre de vie qu'on mène à Tansonville, chez Mme de
+Saint-Loup, un autre genre de plaisir que je trouve à ne sortir qu'à
+la nuit, à suivre au clair de lune ces chemins où je jouais jadis au
+soleil; et la chambre où je me serai endormi au lieu de m'habiller
+pour le dîner, de loin je l'aperçois, quand nous rentrons, traversée
+par les feux de la lampe, seul phare dans la nuit.
+
+Ces évocations tournoyantes et confuses ne duraient jamais que
+quelques secondes; souvent, ma brève incertitude du lieu où je me
+trouvais ne distinguait pas mieux les unes des autres les diverses
+suppositions dont elle était faite, que nous n'isolons, en voyant un
+cheval courir, les positions successives que nous montre le
+kinétoscope. Mais j'avais revu tantôt l'une, tantôt l'autre, des
+chambres que j'avais habitées dans ma vie, et je finissais par me les
+rappeler toutes dans les longues rêveries qui suivaient mon réveil;
+chambres d'hiver où quand on est couché, on se blottit la tête dans un
+nid qu'on se tresse avec les choses les plus disparates: un coin de
+l'oreiller, le haut des couvertures, un bout de châle, le bord du lit,
+et un numéro des Débats roses, qu'on finit par cimenter ensemble selon
+la technique des oiseaux en s'y appuyant indéfiniment; où, par un
+temps glacial le plaisir qu'on goûte est de se sentir séparé du dehors
+(comme l'hirondelle de mer qui a son nid au fond d'un souterrain dans
+la chaleur de la terre), et où, le feu étant entretenu toute la nuit
+dans la cheminée, on dort dans un grand manteau d'air chaud et fumeux,
+traversé des lueurs des tisons qui se rallument, sorte d'impalpable
+alcôve, de chaude caverne creusée au sein de la chambre même, zone
+ardente et mobile en ses contours thermiques, aérée de souffles qui
+nous rafraîchissent la figure et viennent des angles, des parties
+voisines de la fenêtre ou éloignées du foyer et qui se sont
+refroidies;--chambres d'été où l'on aime être uni à la nuit tiède, où
+le clair de lune appuyé aux volets entr'ouverts, jette jusqu'au pied
+du lit son échelle enchantée, où on
+dort presque en plein air, comme la mésange balancée par la brise à la
+pointe d'un rayon--; parfois la chambre Louis XVI, si gaie que même le
+premier soir je n'y avais pas été trop malheureux et où les
+colonnettes qui soutenaient légèrement le plafond s'écartaient avec
+tant de grâce pour montrer et réserver la place du lit; parfois au
+contraire celle, petite et si élevée de plafond, creusée en forme de
+pyramide dans la hauteur de deux étages et partiellement revêtue
+d'acajou, où dès la première seconde j'avais été intoxiqué moralement
+par l'odeur inconnue du vétiver, convaincu de l'hostilité des rideaux
+violets et de l'insolente indifférence de la pendule qui jacassait
+tout haut comme si je n'eusse pas été là;--où une étrange et
+impitoyable glace à pieds quadrangulaires, barrant obliquement un des
+angles de la pièce, se creusait à vif dans la douce plénitude de mon
+champ visuel accoutumé un emplacement qui n'y était pas prévu;--où ma
+pensée, s'efforçant pendant des heures de se disloquer, de s'étirer en
+hauteur pour prendre exactement la forme de la chambre et arriver à
+remplir jusqu'en haut son gigantesque entonnoir, avait souffert bien
+de dures nuits, tandis que j'étais étendu dans mon lit, les yeux
+levés, l'oreille anxieuse, la narine rétive, le cœur battant: jusqu'à
+ce que l'habitude eût changé la couleur des rideaux, fait taire la
+pendule, enseigné la pitié à la glace oblique et cruelle, dissimulé,
+sinon chassé complètement, l'odeur du vétiver et notablement diminué
+la hauteur apparente du plafond. L'habitude! aménageuse habile mais
+bien lente et qui commence par laisser souffrir notre esprit pendant
+des semaines dans une installation provisoire; mais que malgré tout il
+est bien heureux de trouver, car sans l'habitude et réduit à ses seuls
+moyens il serait impuissant à nous rendre un logis habitable.
+
+Certes, j'étais bien éveillé maintenant, mon corps avait viré une
+dernière fois et le bon ange de la certitude avait tout arrêté autour
+de moi, m'avait couché sous mes couvertures, dans ma chambre, et avait
+mis approximativement à leur place dans l'obscurité ma commode, mon
+bureau, ma cheminée, la fenêtre sur la rue et les deux portes. Mais
+j'avais beau savoir que je n'étais pas dans les demeures dont
+l'ignorance du réveil m'avait en un instant sinon présenté l'image
+distincte, du moins fait croire la présence possible, le branle était
+donné à ma mémoire; généralement je ne cherchais pas à me rendormir
+tout de suite; je passais la plus grande partie de la nuit à me
+rappeler notre vie d'autrefois, à Combray chez ma grand'tante, à
+Balbec, à Paris, à Doncières, à Venise, ailleurs encore, à me rappeler
+les lieux, les personnes que j'y avais connues, ce que j'avais vu
+d'elles, ce qu'on m'en avait raconté.
+
+A Combray, tous les jours dès la fin de l'après-midi, longtemps avant
+le moment où il faudrait me mettre au lit et rester, sans dormir, loin
+de ma mère et de ma grand'mère, ma chambre à coucher redevenait le
+point fixe et douloureux de mes préoccupations. On avait bien inventé,
+pour me distraire les soirs où on me trouvait l'air trop malheureux,
+de me donner une lanterne magique, dont, en attendant l'heure du
+dîner, on coiffait ma lampe; et, à l'instar des premiers architectes
+et maîtres verriers de l'âge gothique, elle substituait à l'opacité
+des murs d'impalpables irisations, de surnaturelles apparitions
+multicolores, où des légendes étaient dépeintes comme dans un vitrail
+vacillant et momentané. Mais ma tristesse n'en était qu'accrue, parce
+que rien que le changement d'éclairage détruisait l'habitude que
+j'avais de ma chambre et grâce à quoi, sauf le supplice du coucher,
+elle m'était devenue supportable. Maintenant je ne la reconnaissais
+plus et j'y étais inquiet, comme dans une chambre d'hôtel ou de
+«chalet», où je fusse arrivé pour la première fois en descendant de
+chemin de fer.
+
+Au pas saccadé de son cheval, Golo, plein d'un affreux dessein,
+sortait de la petite forêt triangulaire qui veloutait d'un vert sombre
+la pente d'une colline, et s'avançait en tressautant vers le château
+de la pauvre Geneviève de Brabant. Ce château était coupé selon une
+ligne courbe qui n'était autre que la limite d'un des ovales de verre
+ménagés dans le châssis qu'on glissait entre les coulisses de la
+lanterne. Ce n'était qu'un pan de château et il avait devant lui une
+lande où rêvait Geneviève qui portait une ceinture bleue. Le château
+et la lande étaient jaunes et je n'avais pas attendu de les voir pour
+connaître leur couleur car, avant les verres du châssis, la sonorité
+mordorée du nom de Brabant me l'avait montrée avec évidence. Golo
+s'arrêtait un instant pour écouter avec tristesse le boniment lu à
+haute voix par ma grand'tante et qu'il avait l'air de comprendre
+parfaitement, conformant son attitude avec une docilité qui n'excluait
+pas une certaine majesté, aux indications du texte; puis il
+s'éloignait du même pas saccadé. Et rien ne pouvait arrêter sa lente
+chevauchée. Si on bougeait la lanterne, je distinguais le cheval de
+Golo qui continuait à s'avancer sur les rideaux de la fenêtre, se
+bombant de leurs plis, descendant dans leurs fentes. Le corps de Golo
+lui-même, d'une essence aussi surnaturelle que celui de sa monture,
+s'arrangeait de tout obstacle matériel, de tout objet gênant qu'il
+rencontrait en le prenant comme ossature et en se le rendant
+intérieur, fût-ce le bouton de la porte sur lequel s'adaptait aussitôt
+et surnageait invinciblement sa robe rouge ou sa figure pâle toujours
+aussi noble et aussi mélancolique, mais qui ne laissait paraître aucun
+trouble de cette transvertébration.
+
+Certes je leur trouvais du charme à ces brillantes projections qui
+semblaient émaner d'un passé mérovingien et promenaient autour de moi
+des reflets d'histoire si anciens. Mais je ne peux dire quel malaise
+me causait pourtant cette intrusion du mystère et de la beauté dans
+une chambre que j'avais fini par remplir de mon moi au point de ne pas
+faire plus attention à elle qu'à lui-même. L'influence anesthésiante
+de l'habitude ayant cessé, je me mettais à penser, à sentir, choses si
+tristes. Ce bouton de la porte de ma chambre, qui différait pour moi
+de tous les autres boutons de porte du monde en ceci qu'il semblait
+ouvrir tout seul, sans que j'eusse besoin de le tourner, tant le
+maniement m'en était devenu inconscient, le voilà qui servait
+maintenant de corps astral à Golo. Et dès qu'on sonnait le dîner,
+j'avais hâte de courir à la salle à manger, où la grosse lampe de la
+suspension, ignorante de Golo et de Barbe-Bleue, et qui connaissait
+mes parents et le bœuf à la casserole, donnait sa lumière de tous les
+soirs; et de tomber dans les bras de maman que les malheurs de
+Geneviève de Brabant me rendaient plus chère, tandis que les crimes de
+Golo me faisaient examiner ma propre conscience avec plus de
+scrupules.
+
+Après le dîner, hélas, j'étais bientôt obligé de quitter maman qui
+restait à causer avec les autres, au jardin s'il faisait beau, dans le
+petit salon où tout le monde se retirait s'il faisait mauvais. Tout le
+monde, sauf ma grand'mère qui trouvait que «c'est une pitié de rester
+enfermé à la campagne» et qui avait d'incessantes discussions avec mon
+père, les jours de trop grande pluie, parce qu'il m'envoyait lire dans
+ma chambre au lieu de rester dehors. «Ce n'est pas comme cela que vous
+le rendrez robuste et énergique, disait-elle tristement, surtout ce
+petit qui a tant besoin de prendre des forces et de la volonté.» Mon
+père haussait les épaules et il examinait le baromètre, car il aimait
+la météorologie, pendant que ma mère, évitant de faire du bruit pour
+ne pas le troubler, le regardait avec un respect attendri, mais pas
+trop fixement pour ne pas chercher à percer le mystère de ses
+supériorités. Mais ma grand'mère, elle, par tous les temps, même quand
+la pluie faisait rage et que Françoise avait précipitamment rentré les
+précieux fauteuils d'osier de peur qu'ils ne fussent mouillés, on la
+voyait dans le jardin vide et fouetté par l'averse, relevant ses
+mèches désordonnées et grises pour que son front s'imbibât mieux de la
+salubrité du vent et de la pluie. Elle disait: «Enfin, on respire!» et
+parcourait les allées détrempées,--trop symétriquement alignées à son
+gré par le nouveau jardinier dépourvu du sentiment de la nature et
+auquel mon père avait demandé depuis le matin si le temps
+s'arrangerait,--de son petit pas enthousiaste et saccadé, réglé sur les
+mouvements divers qu'excitaient dans son âme l'ivresse de l'orage, la
+puissance de l'hygiène, la stupidité de mon éducation et la symétrie
+des jardins, plutôt que sur le désir inconnu d'elle d'éviter à sa jupe
+prune les taches de boue sous lesquelles elle disparaissait jusqu'à
+une hauteur qui était toujours pour sa femme de chambre un désespoir
+et un problème.
+
+Quand ces tours de jardin de ma grand'mère avaient lieu après dîner,
+une chose avait le pouvoir de la faire rentrer: c'était, à un des
+moments où la révolution de sa promenade la ramenait périodiquement,
+comme un insecte, en face des lumières du petit salon où les liqueurs
+étaient servies sur la table à jeu,--si ma grand'tante lui criait:
+«Bathilde! viens donc empêcher ton mari de boire du cognac!» Pour la
+taquiner, en effet (elle avait apporté dans la famille de mon père un
+esprit si différent que tout le monde la plaisantait et la
+tourmentait), comme les liqueurs étaient défendues à mon grand-père,
+ma grand'tante lui en faisait boire quelques gouttes. Ma pauvre
+grand'mère entrait, priait ardemment son mari de ne pas goûter au
+cognac; il se fâchait, buvait tout de même sa gorgée, et ma grand'mère
+repartait, triste, découragée, souriante pourtant, car elle était si
+humble de cœur et si douce que sa tendresse pour les autres et le peu
+de cas qu'elle faisait de sa propre personne et de ses souffrances, se
+conciliaient dans son regard en un sourire où, contrairement à ce
+qu'on voit dans le visage de beaucoup d'humains, il n'y avait
+d'ironie que pour elle-même, et pour nous tous comme un baiser de ses
+yeux qui ne pouvaient voir ceux qu'elle chérissait sans les caresser
+passionnément du regard. Ce supplice que lui infligeait ma
+grand'tante, le spectacle des vaines prières de ma grand'mère et de sa
+faiblesse, vaincue d'avance, essayant inutilement d'ôter à mon
+grand-père le verre à liqueur, c'était de ces choses à la vue
+desquelles on s'habitue plus tard jusqu'à les considérer en riant et à
+prendre le parti du persécuteur assez résolument et gaiement pour se
+persuader à soi-même qu'il ne s'agit pas de persécution; elles me
+causaient alors une telle horreur, que j'aurais aimé battre ma
+grand'tante. Mais dès que j'entendais: «Bathilde, viens donc empêcher
+ton mari de boire du cognac!» déjà homme par la lâcheté, je faisais ce
+que nous faisons tous, une fois que nous sommes grands, quand il y a
+devant nous des souffrances et des injustices: je ne voulais pas les
+voir; je montais sangloter tout en haut de la maison à côté de la
+salle d'études, sous les toits, dans une petite pièce sentant l'iris,
+et que parfumait aussi un cassis sauvage poussé au dehors entre les
+pierres de la muraille et qui passait une branche de fleurs par la
+fenêtre entr'ouverte. Destinée à un usage plus spécial et plus
+vulgaire, cette pièce, d'où l'on voyait pendant le jour jusqu'au
+donjon de Roussainville-le-Pin, servit longtemps de refuge pour moi,
+sans doute parce qu'elle était la seule qu'il me fût permis de fermer
+à clef, à toutes celles de mes occupations qui réclamaient une
+inviolable solitude: la lecture, la rêverie, les larmes et la volupté.
+Hélas! je ne savais pas que, bien plus tristement que les petits
+écarts de régime de son mari, mon manque de volonté, ma santé
+délicate, l'incertitude qu'ils projetaient sur mon avenir,
+préoccupaient ma grand'mère, au cours de ces déambulations
+incessantes, de l'après-midi et du soir, où on voyait passer et
+repasser, obliquement levé vers le ciel, son beau visage aux joues
+brunes et sillonnées, devenues au retour de l'âge presque mauves comme
+les labours à l'automne, barrées, si elle sortait, par une voilette à
+demi relevée, et sur lesquelles, amené là par le froid ou quelque
+triste pensée, était toujours en train de sécher un pleur
+involontaire.
+
+Ma seule consolation, quand je montais me coucher, était que maman
+viendrait m'embrasser quand je serais dans mon lit. Mais ce bonsoir
+durait si peu de temps, elle redescendait si vite, que le moment où je
+l'entendais monter, puis où passait dans le couloir à double porte le
+bruit léger de sa robe de jardin en mousseline bleue, à laquelle
+pendaient de petits cordons de paille tressée, était pour moi un
+moment douloureux. Il annonçait celui qui allait le suivre, où elle
+m'aurait quitté, où elle serait redescendue. De sorte que ce bonsoir
+que j'aimais tant, j'en arrivais à souhaiter qu'il vînt le plus tard
+possible, à ce que se prolongeât le temps de répit où maman n'était
+pas encore venue. Quelquefois quand, après m'avoir embrassé, elle
+ouvrait la porte pour partir, je voulais la rappeler, lui dire
+«embrasse-moi une fois encore», mais je savais qu'aussitôt elle aurait
+son visage fâché, car la concession qu'elle faisait à ma tristesse et
+à mon agitation en montant m'embrasser, en m'apportant ce baiser de
+paix, agaçait mon père qui trouvait ces rites absurdes, et elle eût
+voulu tâcher de m'en faire perdre le besoin, l'habitude, bien loin de
+me laisser prendre celle de lui demander, quand elle était déjà sur le
+pas de la porte, un baiser de plus. Or la voir fâchée détruisait tout
+le calme qu'elle m'avait apporté un instant avant, quand elle avait
+penché vers mon lit sa figure aimante, et me l'avait tendue comme une
+hostie pour une communion de paix où mes lèvres puiseraient sa
+présence réelle et le pouvoir de m'endormir. Mais ces soirs-là, où
+maman en somme restait si peu de temps dans ma chambre, étaient doux
+encore en comparaison de ceux où il y avait du monde à dîner et où, à
+cause de cela, elle ne montait pas me dire bonsoir. Le monde se
+bornait habituellement à M. Swann, qui, en dehors de quelques
+étrangers de passage, était à peu près la seule personne qui vînt chez
+nous à Combray, quelquefois pour dîner en voisin (plus rarement depuis
+qu'il avait fait ce mauvais mariage, parce que mes parents ne
+voulaient pas recevoir sa femme), quelquefois après le dîner, à
+l'improviste. Les soirs où, assis devant la maison sous le grand
+marronnier, autour de la table de fer, nous entendions au bout du
+jardin, non pas le grelot profus et criard qui arrosait, qui
+étourdissait au passage de son bruit ferrugineux, intarissable et
+glacé, toute personne de la maison qui le déclenchait en entrant «sans
+sonner», mais le double tintement timide, ovale et doré de la
+clochette pour les étrangers, tout le monde aussitôt se demandait:
+«Une visite, qui cela peut-il être?» mais on savait bien que cela ne
+pouvait être que M. Swann; ma grand'tante parlant à haute voix, pour
+prêcher d'exemple, sur un ton qu'elle s'efforçait de rendre naturel,
+disait de ne pas chuchoter ainsi; que rien n'est plus désobligeant
+pour une personne qui arrive et à qui cela fait croire qu'on est en
+train de dire des choses qu'elle ne doit pas entendre; et on envoyait
+en éclaireur ma grand'mère, toujours heureuse d'avoir un prétexte pour
+faire un tour de jardin de plus, et qui en profitait pour arracher
+subrepticement au passage quelques tuteurs de rosiers afin de rendre
+aux roses un peu de naturel, comme une mère qui, pour les faire
+bouffer, passe la main dans les cheveux de son fils que le coiffeur a
+trop aplatis.
+
+Nous restions tous suspendus aux nouvelles que ma grand'mère allait
+nous apporter de l'ennemi, comme si on eût pu hésiter entre un grand
+nombre possible d'assaillants, et bientôt après mon grand-père disait:
+«Je reconnais la voix de Swann.» On ne le reconnaissait en effet qu'à
+la voix, on distinguait mal son visage au nez busqué, aux yeux verts,
+sous un haut front entouré de cheveux blonds presque roux, coiffés à
+la Bressant, parce que nous gardions le moins de lumière possible au
+jardin pour ne pas attirer les moustiques et j'allais, sans en avoir
+l'air, dire qu'on apportât les sirops; ma grand'mère attachait
+beaucoup d'importance, trouvant cela plus aimable, à ce qu'ils
+n'eussent pas l'air de figurer d'une façon exceptionnelle, et pour les
+visites seulement. M. Swann, quoique beaucoup plus jeune que lui,
+était très lié avec mon grand-père qui avait été un des meilleurs amis
+de son père, homme excellent mais singulier, chez qui, paraît-il, un
+rien suffisait parfois pour interrompre les élans du cœur, changer le
+cours de la pensée. J'entendais plusieurs fois par an mon grand-père
+raconter à table des anecdotes toujours les mêmes sur l'attitude
+qu'avait eue M. Swann le père, à la mort de sa femme qu'il avait
+veillée jour et nuit. Mon grand-père qui ne l'avait pas vu depuis
+longtemps était accouru auprès de lui dans la propriété que les Swann
+possédaient aux environs de Combray, et avait réussi, pour qu'il
+n'assistât pas à la mise en bière, à lui faire quitter un moment, tout
+en pleurs, la chambre mortuaire. Ils firent quelques pas dans le parc
+où il y avait un peu de soleil. Tout d'un coup, M. Swann prenant mon
+grand-père par le bras, s'était écrié: «Ah! mon vieil ami, quel
+bonheur de se promener ensemble par ce beau temps. Vous ne trouvez pas
+ça joli tous ces arbres, ces aubépines et mon étang dont vous ne
+m'avez jamais félicité? Vous avez l'air comme un bonnet de nuit.
+Sentez-vous ce petit vent? Ah! on a beau dire, la vie a du bon tout de
+même, mon cher Amédée!» Brusquement le souvenir de sa femme morte lui
+revint, et trouvant sans doute trop compliqué de chercher comment il
+avait pu à un pareil moment se laisser aller à un mouvement de joie,
+il se contenta, par un geste qui lui était familier chaque fois qu'une
+question ardue se présentait à son esprit, de passer la main sur son
+front, d'essuyer ses yeux et les verres de son lorgnon. Il ne put
+pourtant pas se consoler de la mort de sa femme, mais pendant les deux
+années qu'il lui survécut, il disait à mon grand-père: «C'est drôle,
+je pense très souvent à ma pauvre femme, mais je ne peux y penser
+beaucoup à la fois.» «Souvent, mais peu à la fois, comme le pauvre
+père Swann», était devenu une des phrases favorites de mon grand-père
+qui la prononçait à propos des choses les plus différentes. Il
+m'aurait paru que ce père de Swann était un monstre, si mon grand-père
+que je considérais comme meilleur juge et dont la sentence faisant
+jurisprudence pour moi, m'a souvent servi dans la suite à absoudre des
+fautes que j'aurais été enclin à condamner, ne s'était récrié: «Mais
+comment? c'était un cœur d'or!»
+
+Pendant bien des années, où pourtant, surtout avant mon mariage, M.
+Swann, le fils, vint souvent les voir à Combray, ma grand'tante et mes
+grands-parents ne soupçonnèrent pas qu'il ne vivait plus du tout dans
+la société qu'avait fréquentée sa famille et que sous l'espèce
+d'incognito que lui faisait chez nous ce nom de Swann, ils
+hébergeaient,--avec la parfaite innocence d'honnêtes hôteliers qui ont
+chez eux, sans le savoir, un célèbre brigand,--un des membres les plus
+élégants du Jockey-Club, ami préféré du comte de Paris et du prince de
+Galles, un des hommes les plus choyés de la haute société du faubourg
+Saint-Germain.
+
+L'ignorance où nous étions de cette brillante vie mondaine que menait
+Swann tenait évidemment en partie à la réserve et à la discrétion de
+son caractère, mais aussi à ce que les bourgeois d'alors se faisaient
+de la société une idée un peu hindoue et la considéraient comme
+composée de castes fermées où chacun, dès sa naissance, se trouvait
+placé dans le rang qu'occupaient ses parents, et d'où rien, à moins
+des hasards d'une carrière exceptionnelle ou d'un mariage inespéré, ne
+pouvait vous tirer pour vous faire pénétrer dans une caste supérieure.
+M. Swann, le père, était agent de change; le «fils Swann» se trouvait
+faire partie pour toute sa vie d'une caste où les fortunes, comme dans
+une catégorie de contribuables, variaient entre tel et tel revenu. On
+savait quelles avaient été les fréquentations de son père, on savait
+donc quelles étaient les siennes, avec quelles personnes il était «en
+situation» de frayer. S'il en connaissait d'autres, c'étaient
+relations de jeune homme sur lesquelles des amis anciens de sa
+famille, comme étaient mes parents, fermaient d'autant plus
+bienveillamment les yeux qu'il continuait, depuis qu'il était
+orphelin, à venir très fidèlement nous voir; mais il y avait fort à
+parier que ces gens inconnus de nous qu'il voyait, étaient de ceux
+qu'il n'aurait pas osé saluer si, étant avec nous, il les avait
+rencontrés. Si l'on avait voulu à toute force appliquer à Swann un
+coefficient social qui lui fût personnel, entre les autres fils
+d'agents de situation égale à celle de ses parents, ce coefficient eût
+été pour lui un peu inférieur parce que, très simple de façon et ayant
+toujours eu une «toquade» d'objets anciens et de peinture, il
+demeurait maintenant dans un vieil hôtel où il entassait ses
+collections et que ma grand'mère rêvait de visiter, mais qui était
+situé quai d'Orléans, quartier que ma grand'tante trouvait infamant
+d'habiter. «Êtes-vous seulement connaisseur? je vous demande cela dans
+votre intérêt, parce que vous devez vous faire repasser des croûtes
+par les marchands», lui disait ma grand'tante; elle ne lui supposait
+en effet aucune compétence et n'avait pas haute idée même au point de
+vue intellectuel d'un homme qui dans la conversation évitait les
+sujets sérieux et montrait une précision fort prosaïque non seulement
+quand il nous donnait, en entrant dans les moindres détails, des
+recettes de cuisine, mais même quand les sœurs de ma grand'mère
+parlaient de sujets artistiques. Provoqué par elles à donner son avis,
+à exprimer son admiration pour un tableau, il gardait un silence
+presque désobligeant et se rattrapait en revanche s'il pouvait fournir
+sur le musée où il se trouvait, sur la date où il avait été peint, un
+renseignement matériel. Mais d'habitude il se contentait de chercher à
+nous amuser en racontant chaque fois une histoire nouvelle qui venait
+de lui arriver avec des gens choisis parmi ceux que nous connaissions,
+avec le pharmacien de Combray, avec notre cuisinière, avec notre
+cocher. Certes ces récits faisaient rire ma grand'tante, mais sans
+qu'elle distinguât bien si c'était à cause du rôle ridicule que s'y
+donnait toujours Swann ou de l'esprit qu'il mettait à les conter: «On
+peut dire que vous êtes un vrai type, monsieur Swann!» Comme elle
+était la seule personne un peu vulgaire de notre famille, elle avait
+soin de faire remarquer aux étrangers, quand on parlait de Swann,
+qu'il aurait pu, s'il avait voulu, habiter boulevard Haussmann ou
+avenue de l'Opéra, qu'il était le fils de M. Swann qui avait dû lui
+laisser quatre ou cinq millions, mais que c'était sa fantaisie.
+Fantaisie qu'elle jugeait du reste devoir être si divertissante pour
+les autres, qu'à Paris, quand M. Swann venait le 1er janvier lui
+apporter son sac de marrons glacés, elle ne manquait pas, s'il y avait
+du monde, de lui dire: «Eh bien! M. Swann, vous habitez toujours près
+de l'Entrepôt des vins, pour être sûr de ne pas manquer le train quand
+vous prenez le chemin de Lyon?» Et elle regardait du coin de l'œil,
+par-dessus son lorgnon, les autres visiteurs.
+
+Mais si l'on avait dit à ma grand'mère que ce Swann qui, en tant que
+fils Swann était parfaitement «qualifié» pour être reçu par toute la
+«belle bourgeoisie», par les notaires ou les avoués les plus estimés
+de Paris (privilège qu'il semblait laisser tomber un peu en
+quenouille), avait, comme en cachette, une vie toute différente; qu'en
+sortant de chez nous, à Paris, après nous avoir dit qu'il rentrait se
+coucher, il rebroussait chemin à peine la rue tournée et se rendait
+dans tel salon que jamais l'œil d'aucun agent ou associé d'agent ne
+contempla, cela eût paru aussi extraordinaire à ma tante qu'aurait pu
+l'être pour une dame plus lettrée la pensée d'être personnellement
+liée avec Aristée dont elle aurait compris qu'il allait, après avoir
+causé avec elle, plonger au sein des royaumes de Thétis, dans un
+empire soustrait aux yeux des mortels et où Virgile nous le montre
+reçu à bras ouverts; ou, pour s'en tenir à une image qui avait plus de
+chance de lui venir à l'esprit, car elle l'avait vue peinte sur nos
+assiettes à petits fours de Combray--d'avoir eu à dîner Ali-Baba,
+lequel quand il se saura seul, pénétrera dans la caverne, éblouissante
+de trésors insoupçonnés.
+
+Un jour qu'il était venu nous voir à Paris après dîner en s'excusant
+d'être en habit, Françoise ayant, après son départ, dit tenir du
+cocher qu'il avait dîné «chez une princesse»,--«Oui, chez une princesse
+du demi-monde!» avait répondu ma tante en haussant les épaules sans
+lever les yeux de sur son tricot, avec une ironie sereine.
+
+Aussi, ma grand'tante en usait-elle cavalièrement avec lui. Comme elle
+croyait qu'il devait être flatté par nos invitations, elle trouvait
+tout naturel qu'il ne vînt pas nous voir l'été sans avoir à la main un
+panier de pêches ou de framboises de son jardin et que de chacun de
+ses voyages d'Italie il m'eût rapporté des photographies de
+chefs-d'œuvre.
+
+On ne se gênait guère pour l'envoyer quérir dès qu'on avait besoin
+d'une recette de sauce gribiche ou de salade à l'ananas pour des
+grands dîners où on ne l'invitait pas, ne lui trouvant pas un prestige
+suffisant pour qu'on pût le servir à des étrangers qui venaient pour
+la première fois. Si la conversation tombait sur les princes de la
+Maison de France: «des gens que nous ne connaîtrons jamais ni vous ni
+moi et nous nous en passons, n'est-ce pas», disait ma grand'tante à
+Swann qui avait peut-être dans sa poche une lettre de Twickenham; elle
+lui faisait pousser le piano et tourner les pages les soirs où la sœur
+de ma grand'mère chantait, ayant pour manier cet être ailleurs si
+recherché, la naïve brusquerie d'un enfant qui joue avec un bibelot de
+collection sans plus de précautions qu'avec un objet bon marché. Sans
+doute le Swann que connurent à la même époque tant de clubmen était
+bien différent de celui que créait ma grand'tante, quand le soir, dans
+le petit jardin de Combray, après qu'avaient retenti les deux coups
+hésitants de la clochette, elle injectait et vivifiait de tout ce
+qu'elle savait sur la famille Swann, l'obscur et incertain personnage
+qui se détachait, suivi de ma grand'mère, sur un fond de ténèbres, et
+qu'on reconnaissait à la voix. Mais même au point de vue des plus
+insignifiantes choses de la vie, nous ne sommes pas un tout
+matériellement constitué, identique pour tout le monde et dont chacun
+n'a qu'à aller prendre connaissance comme d'un cahier des charges ou
+d'un testament; notre personnalité sociale est une création de la
+pensée des autres. Même l'acte si simple que nous appelons «voir une
+personne que nous connaissons» est en partie un acte intellectuel.
+Nous remplissons l'apparence physique de l'être que nous voyons, de
+toutes les notions que nous avons sur lui et dans l'aspect total que
+nous nous représentons, ces notions ont certainement la plus grande
+part. Elles finissent par gonfler si parfaitement les joues, par
+suivre en une adhérence si exacte la ligne du nez, elles se mêlent si
+bien de nuancer la sonorité de la voix comme si celle-ci n'était
+qu'une transparente enveloppe, que chaque fois que nous voyons ce
+visage et que nous entendons cette voix, ce sont ces notions que nous
+retrouvons, que nous écoutons. Sans doute, dans le Swann qu'ils
+s'étaient constitué, mes parents avaient omis par ignorance de faire
+entrer une foule de particularités de sa vie mondaine qui étaient
+cause que d'autres personnes, quand elles étaient en sa présence,
+voyaient les élégances régner dans son visage et s'arrêter à son nez
+busqué comme à leur frontière naturelle; mais aussi ils avaient pu
+entasser dans ce visage désaffecté de son prestige, vacant et
+spacieux, au fond de ces yeux dépréciés, le vague et doux
+résidu,--mi-mémoire, mi-oubli,--des heures oisives passées ensemble
+après nos dîners hebdomadaires, autour de la table de jeu ou au
+jardin, durant notre vie de bon voisinage campagnard. L'enveloppe
+corporelle de notre ami en avait été si bien bourrée, ainsi que de
+quelques souvenirs relatifs à ses parents, que ce Swann-là était
+devenu un être complet et vivant, et que j'ai l'impression de quitter
+une personne pour aller vers une autre qui en est distincte, quand,
+dans ma mémoire, du Swann que j'ai connu plus tard avec exactitude je
+passe à ce premier Swann,--à ce premier Swann dans lequel je retrouve
+les erreurs charmantes de ma jeunesse, et qui d'ailleurs ressemble
+moins à l'autre qu'aux personnes que j'ai connues à la même époque,
+comme s'il en était de notre vie ainsi que d'un musée où tous les
+portraits d'un même temps ont un air de famille, une même tonalité--à
+ce premier Swann rempli de loisir, parfumé par l'odeur du grand
+marronnier, des paniers de framboises et d'un brin d'estragon.
+
+Pourtant un jour que ma grand'mère était allée demander un service à
+une dame qu'elle avait connue au Sacré-Cœur (et avec laquelle, à cause
+de notre conception des castes elle n'avait pas voulu rester en
+relations malgré une sympathie réciproque), la marquise de
+Villeparisis, de la célèbre famille de Bouillon, celle-ci lui avait
+dit: «Je crois que vous connaissez beaucoup M. Swann qui est un grand
+ami de mes neveux des Laumes». Ma grand'mère était revenue de sa
+visite enthousiasmée par la maison qui donnait sur des jardins et où
+Mme de Villeparisis lui conseillait de louer, et aussi par un giletier
+et sa fille, qui avaient leur boutique dans la cour et chez qui elle
+était entrée demander qu'on fît un point à sa jupe qu'elle avait
+déchirée dans l'escalier. Ma grand'mère avait trouvé ces gens
+parfaits, elle déclarait que la petite était une perle et que le
+giletier était l'homme le plus distingué, le mieux qu'elle eût jamais
+vu. Car pour elle, la distinction était quelque chose d'absolument
+indépendant du rang social. Elle s'extasiait sur une réponse que le
+giletier lui avait faite, disant à maman: «Sévigné n'aurait pas mieux
+dit!» et en revanche, d'un neveu de Mme de Villeparisis qu'elle avait
+rencontré chez elle: «Ah! ma fille, comme il est commun!»
+
+Or le propos relatif à Swann avait eu pour effet non pas de relever
+celui-ci dans l'esprit de ma grand'tante, mais d'y abaisser Mme de
+Villeparisis. Il semblait que la considération que, sur la foi de ma
+grand'mère, nous accordions à Mme de Villeparisis, lui créât un devoir
+de ne rien faire qui l'en rendît moins digne et auquel elle avait
+manqué en apprenant l'existence de Swann, en permettant à des parents
+à elle de le fréquenter. «Comment elle connaît Swann? Pour une
+personne que tu prétendais parente du maréchal de Mac-Mahon!» Cette
+opinion de mes parents sur les relations de Swann leur parut ensuite
+confirmée par son mariage avec une femme de la pire société, presque
+une cocotte que, d'ailleurs, il ne chercha jamais à présenter,
+continuant à venir seul chez nous, quoique de moins en moins, mais
+d'après laquelle ils crurent pouvoir juger--supposant que c'était là
+qu'il l'avait prise--le milieu, inconnu d'eux, qu'il fréquentait
+habituellement.
+
+Mais une fois, mon grand-père lut dans un journal que M. Swann était
+un des plus fidèles habitués des déjeuners du dimanche chez le duc de
+X..., dont le père et l'oncle avaient été les hommes d'État les plus
+en vue du règne de Louis-Philippe. Or mon grand-père était curieux de
+tous les petits faits qui pouvaient l'aider à entrer par la pensée
+dans la vie privée d'hommes comme Molé, comme le duc Pasquier, comme
+le duc de Broglie. Il fut enchanté d'apprendre que Swann fréquentait
+des gens qui les avaient connus. Ma grand'tante au contraire
+interpréta cette nouvelle dans un sens défavorable à Swann: quelqu'un
+qui choisissait ses fréquentations en dehors de la caste où il était
+né, en dehors de sa «classe» sociale, subissait à ses yeux un fâcheux
+déclassement. Il lui semblait qu'on renonçât d'un coup au fruit de
+toutes les belles relations avec des gens bien posés, qu'avaient
+honorablement entretenues et engrangées pour leurs enfants les
+familles prévoyantes; (ma grand'tante avait même cessé de voir le fils
+d'un notaire de nos amis parce qu'il avait épousé une altesse et était
+par là descendu pour elle du rang respecté de fils de notaire à celui
+d'un de ces aventuriers, anciens valets de chambre ou garçons
+d'écurie, pour qui on raconte que les reines eurent parfois des
+bontés). Elle blâma le projet qu'avait mon grand-père d'interroger
+Swann, le soir prochain où il devait venir dîner, sur ces amis que
+nous lui découvrions. D'autre part les deux sœurs de ma grand'mère,
+vieilles filles qui avaient sa noble nature mais non son esprit,
+déclarèrent ne pas comprendre le plaisir que leur beau-frère pouvait
+trouver à parler de niaiseries pareilles. C'étaient des personnes
+d'aspirations élevées et qui à cause de cela même étaient incapables
+de s'intéresser à ce qu'on appelle un potin, eût-il même un intérêt
+historique, et d'une façon générale à tout ce qui ne se rattachait pas
+directement à un objet esthétique ou vertueux. Le désintéressement de
+leur pensée était tel, à l'égard de tout ce qui, de près ou de loin
+semblait se rattacher à la vie mondaine, que leur sens auditif,--ayant
+fini par comprendre son inutilité momentanée dès qu'à dîner la
+conversation prenait un ton frivole ou seulement terre à terre sans
+que ces deux vieilles demoiselles aient pu la ramener aux sujets qui
+leur étaient chers,--mettait alors au repos ses organes récepteurs et
+leur laissait subir un véritable commencement d'atrophie. Si alors mon
+grand-père avait besoin d'attirer l'attention des deux sœurs, il
+fallait qu'il eût recours à ces avertissements physiques dont usent
+les médecins aliénistes à l'égard de certains maniaques de la
+distraction: coups frappés à plusieurs reprises sur un verre avec la
+lame d'un couteau, coïncidant avec une brusque interpellation de la
+voix et du regard, moyens violents que ces psychiatres transportent
+souvent dans les rapports courants avec des gens bien portants, soit
+par habitude professionnelle, soit qu'ils croient tout le monde un peu
+fou.
+
+Elles furent plus intéressées quand la veille du jour où Swann devait
+venir dîner, et leur avait personnellement envoyé une caisse de vin
+d'Asti, ma tante, tenant un numéro du Figaro où à côté du nom d'un
+tableau qui était à une Exposition de Corot, il y avait ces mots: «de
+la collection de M. Charles Swann», nous dit: «Vous avez vu que Swann
+a «les honneurs» du Figaro?»--«Mais je vous ai toujours dit qu'il avait
+beaucoup de goût», dit ma grand'mère. «Naturellement toi, du moment
+qu'il s'agit d'être d'un autre avis que nous», répondit ma grand'tante
+qui, sachant que ma grand'mère n'était jamais du même avis qu'elle, et
+n'étant bien sûre que ce fût à elle-même que nous donnions toujours
+raison, voulait nous arracher une condamnation en bloc des opinions de
+ma grand'mère contre lesquelles elle tâchait de nous solidariser de
+force avec les siennes. Mais nous restâmes silencieux. Les sœurs de ma
+grand'mère ayant manifesté l'intention de parler à Swann de ce mot du
+Figaro, ma grand'tante le leur déconseilla. Chaque fois qu'elle voyait
+aux autres un avantage si petit fût-il qu'elle n'avait pas, elle se
+persuadait que c'était non un avantage mais un mal et elle les
+plaignait pour ne pas avoir à les envier. «Je crois que vous ne lui
+feriez pas plaisir; moi je sais bien que cela me serait très
+désagréable de voir mon nom imprimé tout vif comme cela dans le
+journal, et je ne serais pas flattée du tout qu'on m'en parlât.» Elle
+ne s'entêta pas d'ailleurs à persuader les sœurs de ma grand'mère; car
+celles-ci par horreur de la vulgarité poussaient si loin l'art de
+dissimuler sous des périphrases ingénieuses une allusion personnelle
+qu'elle passait souvent inaperçue de celui même à qui elle
+s'adressait. Quant à ma mère elle ne pensait qu'à tâcher d'obtenir de
+mon père qu'il consentît à parler à Swann non de sa femme mais de sa
+fille qu'il adorait et à cause de laquelle disait-on il avait fini par
+faire ce mariage. «Tu pourrais ne lui dire qu'un mot, lui demander
+comment elle va. Cela doit être si cruel pour lui.» Mais mon père se
+fâchait: «Mais non! tu as des idées absurdes. Ce serait ridicule.»
+
+Mais le seul d'entre nous pour qui la venue de Swann devint l'objet
+d'une préoccupation douloureuse, ce fut moi. C'est que les soirs où
+des étrangers, ou seulement M. Swann, étaient là, maman ne montait pas
+dans ma chambre. Je ne dînais pas à table, je venais après dîner au
+jardin, et à neuf heures je disais bonsoir et allais me coucher. Je
+dînais avant tout le monde et je venais ensuite m'asseoir à table,
+jusqu'à huit heures où il était convenu que je devais monter; ce
+baiser précieux et fragile que maman me confiait d'habitude dans mon
+lit au moment de m'endormir il me fallait le transporter de la salle à
+manger dans ma chambre et le garder pendant tout le temps que je me
+déshabillais, sans que se brisât sa douceur, sans que se répandît et
+s'évaporât sa vertu volatile et, justement ces soirs-là où j'aurais eu
+besoin de le recevoir avec plus de précaution, il fallait que je le
+prisse, que je le dérobasse brusquement, publiquement, sans même avoir
+le temps et la liberté d'esprit nécessaires pour porter à ce que je
+faisais cette attention des maniaques qui s'efforcent de ne pas penser
+à autre chose pendant qu'ils ferment une porte, pour pouvoir, quand
+l'incertitude maladive leur revient, lui opposer victorieusement le
+souvenir du moment où ils l'ont fermée. Nous étions tous au jardin
+quand retentirent les deux coups hésitants de la clochette. On savait
+que c'était Swann; néanmoins tout le monde se regarda d'un air
+interrogateur et on envoya ma grand'mère en reconnaissance. «Pensez à
+le remercier intelligiblement de son vin, vous savez qu'il est
+délicieux et la caisse est énorme, recommanda mon grand-père à ses
+deux belles-sœurs.» «Ne commencez pas à chuchoter, dit ma grand'tante.
+Comme c'est confortable d'arriver dans une maison où tout le monde
+parle bas.» «Ah! voilà M. Swann. Nous allons lui demander s'il croit
+qu'il fera beau demain», dit mon père. Ma mère pensait qu'un mot
+d'elle effacerait toute la peine que dans notre famille on avait pu
+faire à Swann depuis son mariage. Elle trouva le moyen de l'emmener un
+peu à l'écart. Mais je la suivis; je ne pouvais me décider à la
+quitter d'un pas en pensant que tout à l'heure il faudrait que je la
+laisse dans la salle à manger et que je remonte dans ma chambre sans
+avoir comme les autres soirs la consolation qu'elle vînt m'embrasser.
+«Voyons, monsieur Swann, lui dit-elle, parlez-moi un peu de votre
+fille; je suis sûre qu'elle a déjà le goût des belles œuvres comme son
+papa.» «Mais venez donc vous asseoir avec nous tous sous la véranda»,
+dit mon grand-père en s'approchant. Ma mère fut obligée de
+s'interrompre, mais elle tira de cette contrainte même une pensée
+délicate de plus, comme les bons poètes que la tyrannie de la rime
+force à trouver leurs plus grandes beautés: «Nous reparlerons d'elle
+quand nous serons tous les deux, dit-elle à mi-voix à Swann. Il n'y a
+qu'une maman qui soit digne de vous comprendre. Je suis sûre que la
+sienne serait de mon avis.» Nous nous assîmes tous autour de la table
+de fer. J'aurais voulu ne pas penser aux heures d'angoisse que je
+passerais ce soir seul dans ma chambre sans pouvoir m'endormir; je
+tâchais de me persuader qu'elles n'avaient aucune importance, puisque
+je les aurais oubliées demain matin, de m'attacher à des idées
+d'avenir qui auraient dû me conduire comme sur un pont au delà de
+l'abîme prochain qui m'effrayait. Mais mon esprit tendu par ma
+préoccupation, rendu convexe comme le regard que je dardais sur ma
+mère, ne se laissait pénétrer par aucune impression étrangère. Les
+pensées entraient bien en lui, mais à condition de laisser dehors tout
+élément de beauté ou simplement de drôlerie qui m'eût touché ou
+distrait. Comme un malade, grâce à un anesthésique, assiste avec une
+pleine lucidité à l'opération qu'on pratique sur lui, mais sans rien
+sentir, je pouvais me réciter des vers que j'aimais ou observer les
+efforts que mon grand-père faisait pour parler à Swann du duc
+d'Audiffret-Pasquier, sans que les premiers me fissent éprouver aucune
+émotion, les seconds aucune gaîté. Ces efforts furent infructueux. A
+peine mon grand-père eut-il posé à Swann une question relative à cet
+orateur qu'une des sœurs de ma grand'mère aux oreilles de qui cette
+question résonna comme un silence profond mais intempestif et qu'il
+était poli de rompre, interpella l'autre: «Imagine-toi, Céline, que
+j'ai fait la connaissance d'une jeune institutrice suédoise qui m'a
+donné sur les coopératives dans les pays scandinaves des détails tout
+ce qu'il y a de plus intéressants. Il faudra qu'elle vienne dîner ici
+un soir.» «Je crois bien! répondit sa sœur Flora, mais je n'ai pas
+perdu mon temps non plus. J'ai rencontré chez M. Vinteuil un vieux
+savant qui connaît beaucoup Maubant, et à qui Maubant a expliqué dans
+le plus grand détail comment il s'y prend pour composer un rôle. C'est
+tout ce qu'il y a de plus intéressant. C'est un voisin de M. Vinteuil,
+je n'en savais rien; et il est très aimable.» «Il n'y a pas que M.
+Vinteuil qui ait des voisins aimables», s'écria ma tante Céline d'une
+voix que la timidité rendait forte et la préméditation, factice, tout
+en jetant sur Swann ce qu'elle appelait un regard significatif. En
+même temps ma tante Flora qui avait compris que cette phrase était le
+remerciement de Céline pour le vin d'Asti, regardait également Swann
+avec un air mêlé de congratulation et d'ironie, soit simplement pour
+souligner le trait d'esprit de sa sœur, soit qu'elle enviât Swann de
+l'avoir inspiré, soit qu'elle ne pût s'empêcher de se moquer de lui
+parce qu'elle le croyait sur la sellette. «Je crois qu'on pourra
+réussir à avoir ce monsieur à dîner, continua Flora; quand on le met
+sur Maubant ou sur Mme Materna, il parle des heures sans s'arrêter.»
+«Ce doit être délicieux», soupira mon grand-père dans l'esprit de qui
+la nature avait malheureusement aussi complètement omis d'inclure la
+possibilité de s'intéresser passionnément aux coopératives suédoises
+ou à la composition des rôles de Maubant, qu'elle avait oublié de
+fournir celui des sœurs de ma grand'mère du petit grain de sel qu'il
+faut ajouter soi-même pour y trouver quelque saveur, à un récit sur la
+vie intime de Molé ou du comte de Paris. «Tenez, dit Swann à mon
+grand-père, ce que je vais vous dire a plus de rapports que cela n'en
+a l'air avec ce que vous me demandiez, car sur certains points les
+choses n'ont pas énormément changé. Je relisais ce matin dans
+Saint-Simon quelque chose qui vous aurait amusé. C'est dans le volume
+sur son ambassade d'Espagne; ce n'est pas un des meilleurs, ce n'est
+guère qu'un journal, mais du moins un journal merveilleusement écrit,
+ce qui fait déjà une première différence avec les assommants journaux
+que nous nous croyons obligés de lire matin et soir.» «Je ne suis pas
+de votre avis, il y a des jours où la lecture des journaux me semble
+fort agréable...», interrompit ma tante Flora, pour montrer qu'elle
+avait lu la phrase sur le Corot de Swann dans le Figaro. «Quand ils
+parlent de choses ou de gens qui nous intéressent!» enchérit ma tante
+Céline. «Je ne dis pas non, répondit Swann étonné. Ce que je reproche
+aux journaux c'est de nous faire faire attention tous les jours à des
+choses insignifiantes tandis que nous lisons trois ou quatre fois dans
+notre vie les livres où il y a des choses essentielles. Du moment que
+nous déchirons fiévreusement chaque matin la bande du journal, alors
+on devrait changer les choses et mettre dans le journal, moi je ne
+sais pas, les... Pensées de Pascal! (il détacha ce mot d'un ton
+d'emphase ironique pour ne pas avoir l'air pédant). Et c'est dans le
+volume doré sur tranches que nous n'ouvrons qu'une fois tous les dix
+ans, ajouta-t-il en témoignant pour les choses mondaines ce dédain
+qu'affectent certains hommes du monde, que nous lirions que la reine
+de Grèce est allée à Cannes ou que la princesse de Léon a donné un bal
+costumé. Comme cela la juste proportion serait rétablie.» Mais
+regrettant de s'être laissé aller à parler même légèrement de choses
+sérieuses: «Nous avons une bien belle conversation, dit-il
+ironiquement, je ne sais pas pourquoi nous abordons ces «sommets», et
+se tournant vers mon grand-père: «Donc Saint-Simon raconte que
+Maulevrier avait eu l'audace de tendre la main à ses fils. Vous savez,
+c'est ce Maulevrier dont il dit: «Jamais je ne vis dans cette épaisse
+bouteille que de l'humeur, de la grossièreté et des sottises.»
+«Épaisses ou non, je connais des bouteilles où il y a tout autre
+chose», dit vivement Flora, qui tenait à avoir remercié Swann elle
+aussi, car le présent de vin d'Asti s'adressait aux deux. Céline se
+mit à rire. Swann interloqué reprit: «Je ne sais si ce fut ignorance
+ou panneau, écrit Saint-Simon, il voulut donner la main à mes enfants.
+Je m'en aperçus assez tôt pour l'en empêcher.» Mon grand-père
+s'extasiait déjà sur «ignorance ou panneau», mais Mlle Céline, chez
+qui le nom de Saint-Simon,--un littérateur,--avait empêché l'anesthésie
+complète des facultés auditives, s'indignait déjà: «Comment? vous
+admirez cela? Eh bien! c'est du joli! Mais qu'est-ce que cela peut
+vouloir dire; est-ce qu'un homme n'est pas autant qu'un autre?
+Qu'est-ce que cela peut faire qu'il soit duc ou cocher s'il a de
+l'intelligence et du cœur? Il avait une belle manière d'élever ses
+enfants, votre Saint-Simon, s'il ne leur disait pas de donner la main
+à tous les honnêtes gens. Mais c'est abominable, tout simplement. Et
+vous osez citer cela?» Et mon grand-père navré, sentant
+l'impossibilité, devant cette obstruction, de chercher à faire
+raconter à Swann, les histoires qui l'eussent amusé disait à voix
+basse à maman: «Rappelle-moi donc le vers que tu m'as appris et qui me
+soulage tant dans ces moments-là. Ah! oui: «Seigneur, que de vertus
+vous nous faites haïr!" Ah! comme c'est bien!»
+</pre>
 </body>
 </html>
