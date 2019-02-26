@@ -297,10 +297,6 @@ class HTTPCompressionRequestHandler(SimpleHTTPRequestHandler):
             raise
 
 
-def run(handler=HTTPCompressionRequestHandler, port=8000, bind=''):
-    test(HandlerClass=handler, port=port, bind=bind)
-
-
 if __name__ == '__main__':
     import argparse
 
@@ -314,4 +310,6 @@ if __name__ == '__main__':
                         help='Specify alternate port [default: 8000]')
     args = parser.parse_args()
 
-    run(port=args.port, bind=args.bind)
+    test(HandlerClass=HTTPCompressionRequestHandler,
+         port=args.port, 
+         bind=args.bind)
