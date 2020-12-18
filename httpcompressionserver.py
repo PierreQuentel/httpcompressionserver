@@ -42,6 +42,10 @@ try:
 except ImportError:
     zlib = None
 
+
+DEFAULT_BIND = '0.0.0.0'
+
+
 # List of commonly compressed content types, copied from
 # https://github.com/h5bp/server-configs-apache.
 commonly_compressed_types = [
@@ -301,7 +305,7 @@ if __name__ == '__main__':
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--bind', '-b', default='', metavar='ADDRESS',
+    parser.add_argument('--bind', '-b', default=DEFAULT_BIND, metavar='ADDRESS',
                         help='Specify alternate bind address '
                              '[default: all interfaces]')
     parser.add_argument('port', action='store',
